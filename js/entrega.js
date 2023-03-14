@@ -23,8 +23,9 @@ const operaciones = [
 ];
 
 // Función para filtrar operaciones por moneda
-function filtrarPorMoneda(operaciones, moneda) {
-  return operaciones.filter(op => op.moneda === moneda);
+function filtrarPorMoneda(monedaUsuario) {
+  console.log(monedaUsuario);
+  return operaciones.filter(op => op.moneda === monedaUsuario);
 }
 
 // Función para calcular el total de las operaciones filtradas
@@ -69,12 +70,13 @@ switch (seleccion) {
     break;
 }
 
+alert('Muchas gracias por haber realizado la cotizacion, cuando quiera puede regresar sin compromiso.')
+
 // Filtrar y calcular las operaciones
 const monedaFiltrada = prompt("Ingrese la moneda a filtrar:");
-const operacionesFiltradas = filtrarPorMoneda(operaciones, monedaFiltrada);
-
-
-
+if (filtrarPorMoneda(operaciones, monedaFiltrada)) {
+   alert("Filtró por " + monedaFiltrada);
+}
 
 
 
